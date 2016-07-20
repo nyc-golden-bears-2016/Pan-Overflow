@@ -8,4 +8,8 @@ helpers do
     !!current_user
   end
 
+  def vote_path(model)
+    "/#{model.class.name.downcase}s/#{model.id}/vote"
+  end
+
 end

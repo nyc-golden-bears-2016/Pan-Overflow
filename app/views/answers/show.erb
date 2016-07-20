@@ -1,0 +1,19 @@
+<!-- display answer -->
+<h2>Answers:</h2>
+
+<!-- display answer votes -->
+<% @question.answers.each do | answer | %>
+<!-- missing: [user ability][forum] cast up\downvote -->
+
+  <p>Votes: <%= answer.points %></p>
+  <!-- display answer content -->
+  <p><%= answer.body %></p>
+
+  <!-- display answer comment -->
+  <%= erb :'comments/show', locals: { comments: answer.comments } %>
+
+  <!-- missing: [display] comment author -->
+  <!-- missing: [user ability][forum] add comment -->
+<% end %>
+
+<!-- missing: [user ability][forum] add answer -->

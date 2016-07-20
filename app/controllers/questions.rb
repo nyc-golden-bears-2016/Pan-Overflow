@@ -33,6 +33,16 @@ get '/questions/:id' do
 
 end
 
+post '/questions/:id/vote' do
+
+  @question = Question.find(params[:id])
+  @question.votes.create(value: params[:vote].to_i)
+
+  redirect "/questions/#{@question.id}"
+
+end
+
+
 get '/questions/:id/edit' do
 
   #get params from url

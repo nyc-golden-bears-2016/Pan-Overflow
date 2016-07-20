@@ -1,0 +1,22 @@
+<!-- [user ability][fourm]cast up\downvote -->
+<table>
+    <tr>
+      <th>
+        <form action="<%= vote_path(model) %>" method="POST">
+          <input type="hidden" name="vote" value="1">
+        <input type="submit" value="  Upvote  ">
+        </form>
+      </th>
+    </tr>
+    <tr>
+      <th>Votes: <%= model.points %></th>
+    </tr>
+    <tr>
+      <th>
+        <form action="<%= vote_path(model) %>" method="POST">
+        <input type="hidden" name="vote" value="-1">
+        <input type="submit" value="Downvote">
+        </form>
+      </th>
+    </tr>
+</table>
