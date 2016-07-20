@@ -1,5 +1,5 @@
 class Tag < ActiveRecord::Base
-  has_many :questions
+  has_and_belongs_to_many :questions
 
   validates :name, uniqueness: true, presence: true
 end
