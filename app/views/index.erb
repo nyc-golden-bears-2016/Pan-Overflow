@@ -1,0 +1,26 @@
+<table border="1">
+  <tr>
+    <th>id</th>
+    <th>subject</th>
+    <th>points</th>
+    <th>answers</th>
+    <th>tags</th>
+    <th>author</th>
+  </tr>
+
+
+<% @questions.each do | question | %>
+  <tr>
+    <th><%= question.id %></th>
+    <th><a href="/questions/<%= question.id %>"><%= question.subject %></a></th>
+    <th><%= question.points %></th>
+    <th><%= question.answers.length %></th>
+    <th>
+    <% question.tags.each do | tag | %>
+        <%= tag.name %>
+    <% end %>
+    </th>
+    <th><%= question.user.username %></th><!-- this needs to lead to all of user's questions -->
+  </tr>
+<% end %>
+</table>
