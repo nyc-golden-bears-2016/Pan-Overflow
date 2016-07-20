@@ -2,5 +2,8 @@
 
 5.times {Question.create!(subject: Faker::Hipster.word, body: Faker::Hipster.sentence + "?", user_id: rand(1..3))}
 
-10.times {Answer.create!(text: Faker::Hipster.sentence, question_id: rand(1..5), user_id: rand(1..3))}
+10.times {Answer.create!(body: Faker::Hipster.sentence, question_id: rand(1..5), user_id: rand(1..3))}
 
+5.times {Comment.create!(body: Faker::Hipster.sentence, commentable_type: "Question", commentable_id: rand(1..3), user_id: rand(1..3))}
+
+5.times {Comment.create!(body: Faker::Hipster.sentence, commentable_type: "Answer", commentable_id: rand(1..10), user_id: rand(1..3))}
