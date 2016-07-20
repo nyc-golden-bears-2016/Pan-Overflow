@@ -5,4 +5,9 @@ class Answer < ActiveRecord::Base
   has_many :comments, as: :commentable
 
   validates :body, presence: true
+
+  def points
+    votes.sum(:value)
+  end
+
 end
