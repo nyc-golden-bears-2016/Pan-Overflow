@@ -1,0 +1,53 @@
+input[type=text] {
+    width: 140px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 18px;
+    background-color: white;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    /*padding: 12px 20px 12px 40px;*/
+    font-family: helvetica;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 25%;
+}
+
+.topbar{
+  background: linear-gradient(#000000, #000060);
+  font-size: 18px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  margin-left: 0px;
+  padding-left: 0px;
+
+}
+.topbar ul{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-left: 10px;
+
+}
+.topbar li{
+  display: inline;
+}
+form{
+  font-family: helvetica;
+}
+
+a{
+  color: #008FFF;
+  font-family: 'Bungee', cursive;
+  padding-right: 15px;
+  text-decoration: none;
+}
+img{
+  height: 25px;
+  width: 20px;
+}
+
+
