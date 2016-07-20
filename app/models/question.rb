@@ -1,3 +1,7 @@
 class Question < ActiveRecord::Base
-  # Remember to create a migration!
+  belongs_to :user
+  has_many :tags
+  has_many :votes, as: :post
+
+  validates :subject, :body, presence: true
 end
