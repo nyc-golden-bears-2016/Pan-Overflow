@@ -1,0 +1,10 @@
+<% if logged_in? %>
+  <h2>Add Your Answer</h2>
+  <form class="answer_form" action="/answers" method="POST">
+    <input type="hidden" name="answer[user_id]" value="<%= current_user.id %>">
+    <input type="hidden" name="answer[question_id]" value="<%= question_id %>">
+    <input type="text" name="answer[body]"><br>
+    <br>
+    <input type="submit" value="Submit Your Answer">
+  </form>
+<% end %>
