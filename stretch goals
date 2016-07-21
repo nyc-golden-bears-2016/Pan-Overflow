@@ -2,4 +2,6 @@
 2. convert search from search by tag to search by tag or by title's content.
 3. add hide button to every comment, so it shrinks to narrow thin horizental line.
 4. add mouseOver highlight for questions in both main page and search results.
-5. 
+5. add JS based UX alteration to "add answer/comment" button: intitally its just a button, 
+   after clicking it shows a text form with a submit button, and a cancel button that hides the form,
+   hide the submit button, and re-reveal the add answer/comment button.
