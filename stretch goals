@@ -6,3 +6,5 @@
    after clicking it shows a text form with a submit button, and a cancel button that hides the form,
    hide the submit button, and re-reveal the add answer/comment button.
 6. secure routes, prevent rouge users
+7. confirme pass during sign up
+8. resotre pass page that leads to "sorry lol, no regrets"
