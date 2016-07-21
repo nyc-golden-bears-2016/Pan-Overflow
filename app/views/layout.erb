@@ -19,7 +19,7 @@
   <div class="topbar">
     <ul>
       <li>
-        <a href="/questions"><img src="/pan.jpg" alt="pan">      Pan Overflow<a>
+        <a href="/questions"><img src="/pan.jpg" alt="pan">      Pan Overflow</a>
       </li>
       <li>
 
@@ -29,9 +29,9 @@
           <input type="submit" name="Submit">
         </form>
       </li>
-      <li>
+      <li id="welcome_msg">
       <% if logged_in? %>
-        <a>Hello, <%=current_user.username%></a>
+        He Welcomes you, <%=current_user.username%>
       </li>
       <li>
         <a href="/questions/new">Ask A Question</a>

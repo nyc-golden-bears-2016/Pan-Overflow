@@ -1,13 +1,17 @@
 html{
   background: linear-gradient(#F0F0F0, #6E6E6E);
   background-attachment: fixed;
+ /* background-image: url("/pan.jpg");
+  background-size: 20px;*/
+
+
   height: 100%;
 }
 
 .topbar input[type=text] {
     width: 140px;
     box-sizing: border-box;
-    border: 2px solid #ccc;
+    border: 2px solid #008FFF;
     border-radius: 4px;
     font-size: 18px;
     background-color: white;
@@ -20,6 +24,9 @@ html{
 
 .topbar input[type=text]:focus {
     width: 25%;
+}
+.topbar input[type=submit]:hover{
+  color: #008FFF;
 }
 
 .search_tag_box{
@@ -47,6 +54,8 @@ html{
 }
 .topbar li{
   display: inline;
+  color: #008FFF;
+  font-family: 'Bungee', cursive;
 }
 
 form{
@@ -58,7 +67,10 @@ form{
   font-family: 'Bungee', cursive;
   padding-left: 15px;
   text-decoration: none;
+}
 
+.topbar a:hover{
+  color: #FFBF1E;
 }
 .main_box a{
   text-decoration: none;
@@ -122,7 +134,8 @@ img{
 
 input[type=submit]{
   background-color: white;
-  border-radius: 10px;
+  border-radius: 5px;
+  border-color: #008FFF;
   color: gray;
 }
 
@@ -218,8 +231,18 @@ h2{
 }
 
 .pan_gif {
-  margin: 0 auto;
+  position: fixed;
   height: 150px;
   width: 200px;
+  text-align: left;
+  margin-left: 75%;
+  z-index: 2;
+}
 
+.pan_gif img{
+  height: 100%;
+  width: auto;
+}
+#welcome_msg:hover{
+  color: #008FFF;
 }
