@@ -3,7 +3,8 @@
   <form class="answer_form" action="/answers" method="POST">
     <input type="hidden" name="answer[user_id]" value="<%= current_user.id %>">
     <input type="hidden" name="answer[question_id]" value="<%= question_id %>">
-    <input type="text" name="answer[body]"><br>
+    <textarea rows="5" cols="55" name="answer[body]" tabindex="1"></textarea>
+    <br>
     <br>
     <input type="submit" value="Submit Your Answer">
   </form>
