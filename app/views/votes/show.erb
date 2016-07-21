@@ -1,4 +1,5 @@
 <!-- [user ability][fourm]cast up\downvote -->
+<div class="votebox">
 <table>
     <tr>
       <th>
@@ -10,12 +11,12 @@
             <input type="hidden" name="votes[user_id]" value="<%= current_user.id %>">
           <% end %>
           <input type="hidden" name="question_id" value="<%= question_id %>">
-        <input type="submit" value="  Upvote  ">
+        <input type="image" name="submit" src="/uparrow.png">
         </form>
       </th>
     </tr>
     <tr>
-      <th>Votes: <%= model.points %></th>
+      <th><%= model.points %></th>
     </tr>
     <tr>
       <th>
@@ -27,8 +28,9 @@
             <input type="hidden" name="votes[user_id]" value="<%= current_user.id %>">
           <% end %>
           <input type="hidden" name="question_id" value="<%= question_id %>">
-        <input type="submit" value="Downvote">
+        <input type="image" name="submit" src="/downarrow.png">
         </form>
       </th>
     </tr>
 </table>
+</div>

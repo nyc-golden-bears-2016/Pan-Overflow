@@ -3,11 +3,13 @@
 
 <!-- display answer votes -->
 <% @question.answers.each do | answer | %>
+<div class="answer_box">
 <!-- missing: [user ability][forum] cast up\downvote -->
   <%= erb :'votes/show', locals: { model: answer, question_id: @question.id } %>
   <!-- display answer content -->
-  <p><%= answer.body %></p>
-
+  <div class="answer"><%= answer.body %></div>
+  <div class="author"><%= answer.user.username %></div>
+</div>
   <!-- display answer comment -->
   <%= erb :'comments/show', locals: { comments: answer.comments } %>
 

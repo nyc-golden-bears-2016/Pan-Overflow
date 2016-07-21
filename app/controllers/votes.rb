@@ -5,7 +5,7 @@ post '/votes' do
   if vote.save
     redirect "/questions/#{params[:question_id]}"
   else
-    @errors = vote.errors.full_messages
+    @errors = ["Honey Grahams, you can only vote once."]
     @question = Question.find(params[:question_id])
     erb :'questions/show'
   end

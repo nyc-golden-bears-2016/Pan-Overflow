@@ -24,7 +24,7 @@ post '/users/login' do
     session[:user_id] = user.id
     redirect '/questions'
   else
-      @errors = ["Username or password incorrect."]
+      @errors = ["Honey Grahams, your username and password don't match"]
       erb :'users/login'
     end
 end
