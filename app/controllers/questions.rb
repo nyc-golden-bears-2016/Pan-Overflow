@@ -44,6 +44,12 @@ post '/questions/tag' do
   erb :'tag/show'
 end
 
+get '/questions/tag/:id' do
+  @tag = Tag.find(params["id"])
+  @questions = @tag.questions
+  erb :'tag/show'
+end
+
 
 delete '/questions/:id' do
 
