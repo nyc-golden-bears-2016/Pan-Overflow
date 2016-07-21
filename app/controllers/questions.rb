@@ -5,21 +5,30 @@ end
 
 
 get '/questions/new' do
+  redirect_nologin
+
   erb :'questions/new' #show new questions view
 end
 
 
 post '/questions' do
-
-  #below works with properly formatted params in HTML form
-  @question = Question.new(params[:question]) #create new question
-
-  if @question.save #saves new question or returns false if unsuccessful
-    redirect '/questions' #redirect back to questions index page
+  redirect_nologin
+  tags =  params[:question].delete("tags")
+  if tags.nil?
+    @errors = "You have to tag your question"
+    erb :'questions/new'
   else
-    erb :'questions/new' # show new questions view again(potentially displaying errors)
+    question = Question.new(params[:question])
+    if question.save
+      tags.split(" ").each do |tag|
+        question.tags << Tag.create(name: tag)
+      end
+      redirect '/questions'
+    else
+      @errors = question.errors.full_messages
+      erb :'questions/new'
+    end
   end
-
 end
 
 

@@ -1,0 +1,21 @@
+<% if logged_in? %>
+
+<% if @errors %>
+  <span>Something went wrong:</span>
+  <ul class="error-list pad-b-2">
+    <% @errors.each do |error| %>
+      <li class="error-item"><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+  <h1>Ask A Question To Pan Overflow</h1>
+  <form class="question_form" action="/questions" method="POST">
+    <input type="hidden" name="question[user_id]" value="<%= current_user.id %>">
+    <input type="text" name="question[subject]" placeholder="Subject"><br>
+    <input type="text" name="question[body]" placeholder="Ask a question"><br>
+    <input type="text" name="question[tags]" placeholder="Tag your question">
+    <br>
+    <input type="submit" value="Submit new question">
+  </form>
+<% end %>
