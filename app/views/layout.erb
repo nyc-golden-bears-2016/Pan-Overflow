@@ -1,32 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Pan OverFlow</title>
   <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
   -->
-  <div class="topbar"> <ul>
-  <li><a href="/questions"><img src="/pan.jpg" alt="pan">      Pan Overflow<a></li><li><input type="text" name="search" placeholder="Search by Tag"></li><li><% if logged_in? %>
-<a>Hello, <%=current_user.username%></a></li>
-<li><a href="/questions/new">Ask A Question</a><li>
-<li><a href="/users/signout">Sign Out</a><li></ul></div><br>
-<% else %>
-<li><a href="/users/login">Login</li></a> <li><a href="/users/signup">Signup</li></a></ul>
-<% end %></div><br>
-  <link rel="stylesheet" href="/css/normalize.css">
-  <link href='https://fonts.googleapis.com/css?family=Changa:400,800|Bungee' rel='stylesheet' type='text/css'>
-  <!--
-    application.css is where you put your styles
-  -->
-  <link rel="stylesheet" href="/css/application.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/js/application.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Changa:400,800|Bungee' rel='stylesheet' type='text/css'>
+    <!--
+      application.css is where you put your styles
+    -->
+    <link rel="stylesheet" href="/css/application.css">
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="/js/application.js"></script>
+  <div class="topbar">
+    <ul>
+      <li>
+        <a href="/questions"><img src="/pan.jpg" alt="pan">      Pan Overflow<a>
+      </li>
+      <li>
 
-  <title></title>
-</head>
-<body>
-  <%= yield %>
-</body>
+        <!-- needs to a route, its not being send to a 'post' -->
+        <form class="search_tag_box" method="POST" action="/questions/tag">
+          <input type="text" name="tag" placeholder="Search by Tag">
+          <input type="submit" name="Submit">
+        </form>
+      </li>
+      <li>
+      <% if logged_in? %>
+        <a>Hello, <%=current_user.username%></a>
+      </li>
+      <li>
+        <a href="/questions/new">Ask A Question</a>
+      </li>
+      <li>
+        <a href="/users/signout">Sign Out</a>
+      </li>
+    </ul>
+  </div>
+    <br>
+      <% else %>
+        <li>
+          <a href="/users/login">Login</a>
+        </li>
+        <li>
+          <a href="/users/signup">Signup</a>
+        </li>
+    </ul>
+      <% end %>
+  </div>
+  <br>
+
+  </head>
+  <body>
+    <%= yield %>
+  </body>
 </html>

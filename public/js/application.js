@@ -4,4 +4,15 @@ $(document).ready(function() {
   // when we try to bind to them
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+
+  // $('.search_tag_box').on('click', 'submit', function(event){
+  //   event.preventDefault();
+  //   $.ajax({
+  //     method: "POST",
+  //     url: '/'
+  //   }).done(function(response) {
+  //     alert("working!!!");
+  //     debugger;
+  //   }),
+  // });
 });
