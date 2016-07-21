@@ -22,6 +22,10 @@ html{
     width: 25%;
 }
 
+.search_tag_box{
+  display: inline;
+}
+
 .topbar{
   background: linear-gradient(#000000, #000060);
   font-size: 18px;
@@ -44,6 +48,7 @@ html{
 .topbar li{
   display: inline;
 }
+
 form{
   font-family: helvetica;
 }
@@ -79,6 +84,10 @@ img{
   margin-right: 35%;
   border-radius: 10px;
   box-shadow: 10px 10px 5px #303032;
+  margin-bottom: 2%
+}
+.main_box:hover{
+  background-color: #7FE2FF;
 }
 
 .subject{
@@ -148,10 +157,11 @@ h1{
   background-color: white;
   padding-bottom: 20px;
   padding-top: 20px;
-  margin-right: 15%;
+  margin-right: 35%;
   border-radius: 10px;
   box-shadow: 10px 10px 5px #303032;
   min-height: 110px;
+  margin-bottom: 2%;
 }
 
 .answer{
@@ -166,8 +176,27 @@ h1{
   background-color: white;
   padding-bottom: 20px;
   padding-top: 20px;
-  margin-right: 25%;
+  margin-right: 35%;
   border-radius: 10px;
   box-shadow: 10px 10px 5px #303032;
+  padding-left: 5%;
+  margin-bottom: 5%;
+}
+
+.comment_form{
+  font-size: 18px;
+  margin-left: 25%;
+  margin-bottom: 5%;
+}
+h2{
+  margin-left: 15%;
+  font-size: 30px;
+}
+.answer_form{
+  margin-left: 15%;
+  margin-bottom: 10%;
+}
+#q_page_box:hover{
+  background-color: white;
 }
 

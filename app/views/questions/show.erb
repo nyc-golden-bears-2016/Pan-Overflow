@@ -5,8 +5,7 @@
   <% end %>
   </ul>
 <% end %>
-<div class="outside"></div>
-<div class="main_box">
+<div class="main_box" id="q_page_box">
 <div class="subject"><%= @question.subject %> </div>
 
   <%= erb :'votes/show', locals: { model: @question, question_id: @question.id } %>
