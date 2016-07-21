@@ -1,3 +1,10 @@
+<% if @errors %>
+  <ul>
+  <% @errors.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+  </ul>
+<% end %>
 
 <h1><%= @question.subject %> </h1>
 
@@ -16,6 +23,6 @@
 <%= erb :'comments/show', locals: { comments: @question.comments } %>
 
 
-<%= erb :'comments/new' , locals: { model: @question} %>
+<%= erb :'comments/new' , locals: { model: @question, question_id: @question.id } %>
 <%= erb :'answers/show' %>
 

@@ -28,3 +28,8 @@ post '/users/login' do
       erb :'users/login'
     end
 end
+
+get '/users/signout' do
+  session.clear
+  redirect '/'
+end
