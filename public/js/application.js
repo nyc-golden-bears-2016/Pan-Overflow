@@ -5,14 +5,14 @@ $(document).ready(function() {
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
 
-  // $('.search_tag_box').on('click', 'submit', function(event){
-  //   event.preventDefault();
-  //   $.ajax({
-  //     method: "POST",
-  //     url: '/'
-  //   }).done(function(response) {
-  //     alert("working!!!");
-  //     debugger;
-  //   }),
-  // });
+  $('search_tag_box. submit').click(function(event){
+    event.preventDefault();
+    alert("working")
+    // $.ajax({
+    //   method: "POST",
+    //   url: '/questions/tag'
+    // }).done(function(response) {
+    //   alert("working!!!");
+    // }),
+  });
 });

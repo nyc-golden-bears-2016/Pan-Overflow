@@ -44,7 +44,7 @@ post '/questions/tag' do
     @errors = ["No results found with #{params[:tag]} tag."]
     erb :'tag/show'
   else
-    @questions = @tag.questions
+    @questions = @tag.questions.sort{|top, bottom| bottom.points <=> top.points}
     erb :'tag/show'
   end
 end
