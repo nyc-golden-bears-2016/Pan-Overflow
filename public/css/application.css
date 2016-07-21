@@ -1,4 +1,9 @@
-input[type=text] {
+html{
+  background: linear-gradient(#F0F0F0, #6E6E6E);
+  height: 200%;
+}
+
+.topbar input[type=text] {
     width: 140px;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -12,7 +17,7 @@ input[type=text] {
     transition: width 0.4s ease-in-out;
 }
 
-input[type=text]:focus {
+.topbar input[type=text]:focus {
     width: 25%;
 }
 
@@ -39,15 +44,78 @@ form{
   font-family: helvetica;
 }
 
-a{
+.topbar a{
   color: #008FFF;
   font-family: 'Bungee', cursive;
-  padding-right: 15px;
+  padding-left: 15px;
   text-decoration: none;
+
+}
+.main_box a{
+  text-decoration: none;
+  font-family: helvetica;
+  color: black;
 }
 img{
   height: 25px;
   width: 20px;
+}
+
+.table{
+  position: absolute;
+  padding-left: 50px;
+}
+
+.main_box{
+  position: relative;
+  margin-left: 200px;
+  background-color: white;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  margin-right: 500px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px #303032;
+}
+
+.subject{
+  margin-left: 200px;
+  font-style: bold, ;
+  font-size: 24px;
+  padding-bottom: 15px;
+  color: #008FFF;
+}
+
+.author{
+  font-size: 14px;
+  margin-left: 200px;
+}
+
+.tag{
+  margin-left: 500px;
+}
+
+
+
+.signup_login_form{
+  width: 140px;
+  margin: 0 auto;
+  font-size: 18px;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  /*padding: 12px 20px 12px 40px;*/
+  font-family: helvetica;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=submit]{
+  background-color: white;
+  border-radius: 10px;
+  color: gray;
+}
+
+h1{
+  text-align: center;
+  font-family: 'Bungee', cursive;
 }
 
 
