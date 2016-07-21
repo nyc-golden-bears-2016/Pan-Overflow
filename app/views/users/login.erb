@@ -1,15 +1,17 @@
 
 <h1>Login to Pan Overflow!!!</h1>
-
-
-
 <% if @errors %>
-  <span>Something went wrong:</span>
+  <div class="pan_gif">
+    <img src="/pan_finger_wag.gif" class="pan_gif">
+  </div>
+  <div class="pan_gif">
+  <p>Pan says:</p>
   <ul class="error-list pad-b-2">
     <% @errors.each do |error| %>
       <li class="error-item"><%= error %></li>
     <% end %>
   </ul>
+  </div>
 <% end %>
 <div class="signup_login_form">
 <form method="post" action="/users/login">

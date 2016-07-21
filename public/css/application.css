@@ -200,3 +200,26 @@ h2{
   background-color: white;
 }
 
+.question_form{
+  width: 540px;
+  margin: 0 auto;
+  font-size: 18px;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  text-align: center;
+  /*padding: 12px 20px 12px 40px;*/
+  font-family: helvetica;
+  transition: width 0.4s ease-in-out;
+}
+
+.question_form input{
+  width: 400px;
+  margin: 5px 0;
+}
+
+.pan_gif {
+  margin: 0 auto;
+  height: 150px;
+  width: 200px;
+
+}

@@ -1,21 +1,29 @@
 <% if logged_in? %>
 
 <% if @errors %>
-  <span>Something went wrong:</span>
+  <div class="pan_gif">
+    <img src="/pan_finger_wag.gif" class="pan_gif">
+  </div>
+  <div class="pan_gif">
+  <p>Pan says:</p>
   <ul class="error-list pad-b-2">
     <% @errors.each do |error| %>
       <li class="error-item"><%= error %></li>
     <% end %>
   </ul>
+  </div>
 <% end %>
 
+<div class="question_form">
   <h1>Ask A Question To Pan Overflow</h1>
-  <form class="question_form" action="/questions" method="POST">
+  <form id="question_form" action="/questions" method="POST">
     <input type="hidden" name="question[user_id]" value="<%= current_user.id %>">
-    <input type="text" name="question[subject]" placeholder="Subject"><br>
-    <input type="text" name="question[body]" placeholder="Ask a question"><br>
-    <input type="text" name="question[tags]" placeholder="Tag your question">
+    <input type="text" name="question[subject]" placeholder="Subject" tabindex="1"><br>
+    <textarea rows="4" cols="43" name="question[body]" tabindex="1" form="question_form"></textarea>
     <br>
-    <input type="submit" value="Submit new question">
+    <input type="text" name="question[tags]" placeholder="Tag your question" tabindex="1">
+    <br>
+    <input type="submit" value="Submit new question" tabindex="1">
   </form>
 <% end %>
+</div>
