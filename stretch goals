@@ -5,3 +5,4 @@
 5. add JS based UX alteration to "add answer/comment" button: intitally its just a button, 
    after clicking it shows a text form with a submit button, and a cancel button that hides the form,
    hide the submit button, and re-reveal the add answer/comment button.
+6. secure routes, prevent rouge users
