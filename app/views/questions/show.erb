@@ -5,24 +5,25 @@
   <% end %>
   </ul>
 <% end %>
-
-<h1><%= @question.subject %> </h1>
+<div class="outside"></div>
+<div class="main_box">
+<div class="subject"><%= @question.subject %> </div>
 
   <%= erb :'votes/show', locals: { model: @question, question_id: @question.id } %>
-
+  <div class="tag">
   <% @question.tags.each do | tag | %>
     <p>Tags: <%= tag.name %></p>
-  <% end %>
+  <% end %></div>
 
-<p><%= @question.body %> </p>
+<div class="question_text"><%= @question.body %> </div>
 
 
 
-<p>Author: @<%= @question.user.username %> </p>
+<div class="author">Author: @<%= @question.user.username %> </div>
+</div>
 
 <%= erb :'comments/show', locals: { comments: @question.comments } %>
 
 
 <%= erb :'comments/new' , locals: { model: @question, question_id: @question.id } %>
 <%= erb :'answers/show' %>
-
