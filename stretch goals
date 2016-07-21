@@ -8,3 +8,4 @@
 6. secure routes, prevent rouge users - done by mason
 7. confirme pass during sign up (send both to athen..)
 8. resotre pass page that leads to "sorry lol, no regrets"
+9. user name must contain a phrase - done via regex or via custome validator
