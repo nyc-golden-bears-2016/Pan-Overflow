@@ -4,15 +4,17 @@ $(document).ready(function() {
   // when we try to bind to them
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
-
-  $('search_tag_box. submit').click(function(event){
+  $('.upvote_form').submit(function(event){
     event.preventDefault();
-    alert("working")
-    // $.ajax({
-    //   method: "POST",
-    //   url: '/questions/tag'
-    // }).done(function(response) {
-    //   alert("working!!!");
-    // }),
+    debugger;
+    $.ajax({
+      method: "POST",
+      url: "/votes",
+      data: $(event.target.children).each(function(index, el) {el.name; el.value})
+    }).done(function(response){
+      // debugger;
+      alert("working")
+      // $(event.target).find($("")).css("color", "green");
+    });
   });
 });
