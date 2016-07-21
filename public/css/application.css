@@ -201,7 +201,7 @@ h2{
 }
 
 .question_form{
-  width: 240px;
+  width: 540px;
   margin: 0 auto;
   font-size: 18px;
   background-position: 10px 10px;
@@ -212,4 +212,14 @@ h2{
   transition: width 0.4s ease-in-out;
 }
 
+.question_form input{
+  width: 400px;
+  margin: 5px 0;
+}
 
+.pan_gif {
+  margin: 0 auto;
+  height: 150px;
+  width: 200px;
+
+}

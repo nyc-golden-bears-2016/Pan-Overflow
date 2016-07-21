@@ -1,11 +1,21 @@
+<div class="outside"></div>
+<div class="main_box">
 <% if @errors %>
-  <ul>
-  <% @errors.each do |message| %>
-    <li><%= message %></li>
-  <% end %>
+  <div class="pan_gif">
+    <img src="/pan_finger_wag.gif" class="pan_gif">
+  </div>
+  <div class="pan_gif">
+  <p>Pan says:</p>
+  <ul class="error-list pad-b-2">
+    <% @errors.each do |error| %>
+      <li class="error-item"><%= error %></li>
+    <% end %>
   </ul>
+  </div>
 <% end %>
+
 <div class="main_box" id="q_page_box">
+
 <div class="subject"><%= @question.subject %> </div>
 
   <%= erb :'votes/show', locals: { model: @question, question_id: @question.id } %>
