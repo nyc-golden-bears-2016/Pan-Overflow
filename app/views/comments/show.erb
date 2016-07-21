@@ -1,10 +1,11 @@
 <% unless comments.empty? %>
 <div class="comment_box">
 <h3>Comments</h3>
+<hr>
 <% comments.each do |comment| %>
-  <hr>
   <p><%= comment.body %></p>
   <p>@<%= comment.user.username %></p>
+  <hr>
 <% end %>
 </div>
 <% end %>
