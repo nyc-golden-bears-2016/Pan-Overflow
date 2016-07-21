@@ -20,7 +20,9 @@
   <%= erb :'votes/show', locals: { model: @question, question_id: @question.id } %>
   <div class="tag">
   <% @question.tags.each do | tag | %>
-    <p>Tags: <%= tag.name %></p>
+    <p>Tags:
+      <a href="/questions/tag/<%= tag.id %>"><%= tag.name %></a>
+    </p>
   <% end %></div>
 
 <div class="question_text"><%= @question.body %> </div>
