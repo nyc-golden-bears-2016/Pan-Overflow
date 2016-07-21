@@ -2,8 +2,14 @@
 <table>
     <tr>
       <th>
-        <form action="<%= vote_path(model) %>" method="POST">
-          <input type="hidden" name="vote" value="1">
+        <form action="/votes" method="POST">
+          <input type="hidden" name="votes[value]" value="1">
+          <input type="hidden" name="votes[votable_id]" value="<%= model.id %>"
+          <input type="hidden" name="votes[votable_type]" value="<%= model.class %>"
+          <% if logged_in? %>
+            <input type="hidden" name="votes[user_id]" value="<%= current_user.id %>"
+          <% end %>
+          <input type="hidden" name="question_id" value="<%= question_id %>">
         <input type="submit" value="  Upvote  ">
         </form>
       </th>
@@ -13,8 +19,14 @@
     </tr>
     <tr>
       <th>
-        <form action="<%= vote_path(model) %>" method="POST">
-        <input type="hidden" name="vote" value="-1">
+        <form action="/votes" method="POST">
+          <input type="hidden" name="votes[value]" value="-1">
+          <input type="hidden" name="votes[votable_id]" value="<%= model.id %>"
+          <input type="hidden" name="votes[votable_type]" value="<%= model.class %>"
+          <% if logged_in? %>
+            <input type="hidden" name="votes[user_id]" value="<%= current_user.id %>"
+          <% end %>
+          <input type="hidden" name="question_id" value="<%= question_id %>">
         <input type="submit" value="Downvote">
         </form>
       </th>

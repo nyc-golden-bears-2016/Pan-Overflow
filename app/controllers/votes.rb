@@ -1,8 +1,10 @@
 post '/votes' do
-
-  @question = Question.find(params[:id])
-  @question.votes.create(value: params[:vote].to_i)
-
-  redirect "/questions/#{@question.id}"
-
+  redirect_nologin
+  vote = current_user.votes.new(params[:votes])
+  if vote.save
+    redirect "/questions/#{params[:question_id]}"
+  else
+    @errors = vote.errors.full_messages
+    erb :'questions/show'
+  end
 end

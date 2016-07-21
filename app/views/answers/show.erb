@@ -4,8 +4,7 @@
 <!-- display answer votes -->
 <% @question.answers.each do | answer | %>
 <!-- missing: [user ability][forum] cast up\downvote -->
-
-  <p>Votes: <%= answer.points %></p>
+  <%= erb :'votes/show', locals: { model: answer, question_id: @question.id } %>
   <!-- display answer content -->
   <p><%= answer.body %></p>
 

@@ -1,24 +1,21 @@
-<!-- display question subject -->
+
 <h1><%= @question.subject %> </h1>
 
-<!-- display question votes -->
-<%= erb :'votes/show', locals: { model: @question } %>
+  <%= erb :'votes/show', locals: { model: @question, question_id: @question.id } %>
 
-<!-- display question tags -->
   <% @question.tags.each do | tag | %>
     <p>Tags: <%= tag.name %></p>
   <% end %>
 
-<!-- display question content -->
 <p><%= @question.body %> </p>
 
-<!-- display question author -->
-<p>Author: <%= @question.user.username %> </p>
 
-<!-- display question comments -->
+
+<p>Author: @<%= @question.user.username %> </p>
+
 <%= erb :'comments/show', locals: { comments: @question.comments } %>
-<!-- missing: [display] comment author -->
-<!-- missing: [user ability][fourm] add comment to question -->
 
+
+<%= erb :'comments/new' , locals: { model: @question} %>
 <%= erb :'answers/show' %>
 

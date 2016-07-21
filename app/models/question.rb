@@ -6,6 +6,7 @@ class Question < ActiveRecord::Base
   has_many :answers
 
   validates :subject, :body, presence: true
+  validates :subject, uniqueness: { scope: [:body, :user_id]}
 
   def points
     votes.sum(:value)
