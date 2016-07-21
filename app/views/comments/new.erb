@@ -1,6 +1,11 @@
-<h4>Add your comment</h4>
-
-<form id="comments" method="post" action="<%= comment_path(model) %>">
-  <input type="text" name="body" placeholder="Add a comment">
-  <input type="submit" value="Submit new comment">
-</form>
+<% if logged_in? %>
+  <h4>Add your comment</h4>
+  <form class="comment_form" action="/comments" method="POST">
+    <input type="hidden" name="comment[commentable_id]" value="<%= model.id %>">
+    <input type="hidden" name="comment[commentable_type]" value="<%= model.class %>">
+    <input type="hidden" name="comment[question_id]" value="<%= question_id %>">
+    <input type="hidden" name="comment[user_id]" value="<%= current_user.id %>">
+    <input type="text" name="comment[body]" placeholder="Add a comment">
+    <input type="submit" value="Submit new comment">
+  </form>
+<% end %>

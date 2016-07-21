@@ -3,5 +3,5 @@ class Vote < ActiveRecord::Base
   belongs_to :user
 
   validates :value, presence: true
-  validates :user, uniqueness: { scope: [:votable_id, :votable_type]}
+  validates :user, uniqueness: { scope: [:voteable_id, :voteable_type]}
 end
