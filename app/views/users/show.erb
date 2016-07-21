@@ -1,17 +1,4 @@
 <div class="outside"></div>
-<% if @errors %>
-  <div class="pan_gif">
-    <img src="/pan_finger_wag.gif" class="pan_gif">
-  </div>
-  <div class="pan_gif">
-  <p>Pan says:</p>
-  <ul class="error-list pad-b-2">
-    <% @errors.each do |error| %>
-      <li class="error-item"><%= error %></li>
-    <% end %>
-  </ul>
-  </div>
-<% end %>
 <div class="main_box" id="q_page_box">
 
 <div class="subject"><%= @question.subject %> </div>
