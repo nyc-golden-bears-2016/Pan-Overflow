@@ -10,7 +10,7 @@ post '/votes' do
     else
       @errors = ["Honey Grahams, you can only vote once."]
       @question = Question.find(params[:question_id])
-      erb :'questions/show'
+      # erb :'questions/show'
     end
   else
     if vote.save
