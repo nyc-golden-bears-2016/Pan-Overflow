@@ -16,11 +16,11 @@
       </th>
     </tr>
     <tr>
-      <th><%= model.points %></th>
+      <th id="vote-count"><%= model.points %></th>
     </tr>
     <tr>
       <th>
-        <form action="/votes" method="POST">
+        <form class="downvote_form" action="/votes" method="POST">
           <input type="hidden" name="votes[value]" value="-1">
           <input type="hidden" name="votes[voteable_id]" value="<%= model.id %>">
           <input type="hidden" name="votes[voteable_type]" value="<%= model.class %>">

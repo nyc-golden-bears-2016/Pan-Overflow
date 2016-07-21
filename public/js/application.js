@@ -4,17 +4,35 @@ $(document).ready(function() {
   // when we try to bind to them
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
-  $('.upvote_form').submit(function(event){
+  $('.upvote_form').on("submit", function(event){
     event.preventDefault();
-    debugger;
     $.ajax({
       method: "POST",
       url: "/votes",
       data: $(event.target.children).each(function(index, el) {el.name; el.value})
     }).done(function(response){
-      // debugger;
-      alert("working")
-      // $(event.target).find($("")).css("color", "green");
+
+var currentVote = $(event.target).parent().parent().siblings().find("#vote-count").html();
+var newVote = parseInt(currentVote) + 1;
+$(event.target).parent().parent().siblings().find("#vote-count").html(newVote);
+
     });
   });
+
+  $('.downvote_form').on("submit", function(event){
+    event.preventDefault();
+    $.ajax({
+      method: "POST",
+      url: "/votes",
+      data: $(event.target.children).each(function(index, el) {el.name; el.value})
+    }).done(function(response){
+
+var currentVote = $(event.target).parent().parent().siblings().find("#vote-count").html();
+var newVote = parseInt(currentVote) - 1;
+$(event.target).parent().parent().siblings().find("#vote-count").html(newVote);
+
+    });
+  });
+
+
 });
