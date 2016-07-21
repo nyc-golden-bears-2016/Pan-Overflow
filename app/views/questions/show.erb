@@ -27,3 +27,6 @@
 
 <%= erb :'comments/new' , locals: { model: @question, question_id: @question.id } %>
 <%= erb :'answers/show' %>
+
+<%= erb :'answers/new', locals: { question_id: @question.id } %>
+
