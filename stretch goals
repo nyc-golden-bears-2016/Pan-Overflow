@@ -1,3 +1,5 @@
-1. add pages (limit view to fixed number, @both main page & search)
-2. conert search from search by tag to search by tag or title's content
-3.
+1. add pages (limit view to fixed number, @both main page & search). 
+2. convert search from search by tag to search by tag or by title's content.
+3. add hide button to every comment, so it shrinks to narrow thin horizental line.
+4. add mouseOver highlight for questions in both main page and search results.
+5. 
