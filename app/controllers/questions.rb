@@ -3,11 +3,11 @@ get '/questions' do
   erb :index
 end
 
+
 get '/questions/new' do
-
   erb :'questions/new' #show new questions view
-
 end
+
 
 post '/questions' do
 
@@ -22,14 +22,38 @@ post '/questions' do
 
 end
 
-
 get '/questions/:id' do
+  @question = Question.find(params[:id])
+  erb :'questions/show'
+end
 
-  #gets params from url
 
-  @question = Question.find(params[:id]) #define instance variable for view
 
-  erb :'questions/show' #show single question view
+
+
+delete '/questions/:id' do
+
+  #get params from url
+  @question = Question.find(params[:id]) #define question to delete
+
+  @question.destroy #delete question
+
+  redirect '/questions' #redirect back to questions index page
+
+end
+
+post '/questions/:id/comment' do
+
+  @question = Question.find(params[:id])
+
+  @comment = @question.comments.new(body: params[:body])
+
+  if @comment.save
+    redirect "/questions/#{@question.id}"
+  else
+    @errors = @comment.errors.full_messages
+    erb :'comment/new'
+  end
 
 end
 
@@ -54,16 +78,5 @@ put '/questions/:id' do
   else
     erb :'questions/edit' #show edit question view again(potentially displaying errors)
   end
-
-end
-
-delete '/questions/:id' do
-
-  #get params from url
-  @question = Question.find(params[:id]) #define question to delete
-
-  @question.destroy #delete question
-
-  redirect '/questions' #redirect back to questions index page
 
 end

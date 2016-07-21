@@ -1,21 +1,21 @@
+
 <h1><%= @question.subject %> </h1>
-<p>Votes: <%= @question.points %> </p>
+
+  <%= erb :'votes/show', locals: { model: @question, question_id: @question.id } %>
+
   <% @question.tags.each do | tag | %>
     <p>Tags: <%= tag.name %></p>
   <% end %>
+
 <p><%= @question.body %> </p>
-<p>Author: <%= @question.user.username %> </p>
-<h5>Comments:</h5>
-<% @question.comments.each do | comment | %>
-  <p><%= comment.body %></p>
-<% end %>
-<h2>Answers:</h2>
-<% @question.answers.each do | answer | %>
-  <p>Votes: <%= answer.points %></p>
-  <p><%= answer.body %></p>
-  <% answer.comments.each do | comment | %>
-    <h5>Comments:</h5>
-    <p><%= comment.body %></p>
-  <% end %>
-<% end %>
+
+
+
+<p>Author: @<%= @question.user.username %> </p>
+
+<%= erb :'comments/show', locals: { comments: @question.comments } %>
+
+
+<%= erb :'comments/new' , locals: { model: @question} %>
+<%= erb :'answers/show' %>
 
