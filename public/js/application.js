@@ -19,9 +19,12 @@ $(document).ready(function() {
         var currentVote = $(event.target).parent().parent().siblings().find("#vote-count").html();
         var newVote = parseInt(currentVote) + 1;
         $(event.target).parent().parent().siblings().find("#vote-count").html(newVote);
+        $(event.target).closest('.votebox').find(".arrow").hide();
+        $(event.target).parent().parent().siblings().find("#vote-count").css("padding-left", "60%").css("padding-bottom", "130%").css("color", "green");
         }
       });
     });
+
 
   $('.downvote_form').on("submit", function(event){
     event.preventDefault();
@@ -38,6 +41,8 @@ $(document).ready(function() {
         var currentVote = $(event.target).parent().parent().siblings().find("#vote-count").html();
         var newVote = parseInt(currentVote) - 1;
         $(event.target).parent().parent().siblings().find("#vote-count").html(newVote);
+        $(event.target).closest('.votebox').find(".arrow").hide();
+        $(event.target).parent().parent().siblings().find("#vote-count").css("padding-left", "60%").css("padding-bottom", "130%").css("color", "red");
         }
       });
     });

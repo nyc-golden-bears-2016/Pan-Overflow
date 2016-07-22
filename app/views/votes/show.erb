@@ -6,15 +6,15 @@
         <form class="upvote_form" action="/votes" method="POST">
            <% unless logged_in? %>
             <input type="hidden" name="not-logged-in" value="false">
-          <% end %>  
+          <% end %>
           <% if logged_in? %>
           <input type="hidden" name="votes[value]" value="1">
           <input type="hidden" name="votes[voteable_id]" value="<%= model.id %>">
           <input type="hidden" name="votes[voteable_type]" value="<%= model.class %>">
           <input type="hidden" name="votes[user_id]" value="<%= current_user.id %>">
           <input type="hidden" name="question_id" value="<%= question_id %>">
-          <% end %> 
-          <input type="image" name="submit" src="/uparrow.png">
+          <% end %>
+          <input class="arrow" type="image" name="submit" src="/uparrow.png">
         </form>
       </th>
     </tr>
@@ -26,15 +26,15 @@
         <form class="downvote_form" action="/votes" method="POST">
           <% unless logged_in? %>
             <input type="hidden" name="not-logged-in" value="false">
-          <% end %>    
+          <% end %>
           <% if logged_in? %>
           <input type="hidden" name="votes[value]" value="-1">
           <input type="hidden" name="votes[voteable_id]" value="<%= model.id %>">
           <input type="hidden" name="votes[voteable_type]" value="<%= model.class %>">
           <input type="hidden" name="votes[user_id]" value="<%= current_user.id %>">
           <input type="hidden" name="question_id" value="<%= question_id %>">
-          <% end %> 
-          <input type="image" name="submit" src="/downarrow.png">
+          <% end %>
+          <input class="arrow" type="image" name="submit" src="/downarrow.png">
         </form>
       </th>
     </tr>
