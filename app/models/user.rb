@@ -7,5 +7,7 @@ class User < ActiveRecord::Base
   has_secure_password
 
   validates :username, uniqueness:true, presence: true
+  validates :username, format:{with: /(pan)|(honey)|(graham)/i, message: "must contain 'Pan', 'Honey', or 'Graham'"}
+  validates :password, length: {in: 6..20}
 
 end

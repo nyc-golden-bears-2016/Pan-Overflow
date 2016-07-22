@@ -1,15 +1,29 @@
-3.times {User.create!(username: Faker::Superhero.name, password: "test")}
-
-5.times {Question.create!(subject: Faker::Hipster.word, body: Faker::Hipster.sentence + "?", user_id: User.all.sample.id)}
-
-4.times {Tag.create!(name: Faker::Hipster.word)}
-
-Question.all.each do |question|
-  question.tags << Tag.all.sample
-end
-
-10.times {Answer.create!(body: Faker::Hipster.sentence, question_id: rand(1..5), user_id: User.all.sample.id)}
-
-5.times {Comment.create!(body: Faker::Hipster.sentence, commentable_type: "Question", commentable_id: rand(1..3), user_id: User.all.sample.id)}
-
-5.times {Comment.create!(body: Faker::Hipster.sentence, commentable_type: "Answer", commentable_id: rand(1..10), user_id: User.all.sample.id)}
+User.create(username: "Pan", password: "testtest")
+User.create!(username: "PanFan90", password: "testtest")
+User.create!(username: "PansDisciple", password: "testtest")
+User.create!(username: "Panagram", password: "testtest")
+User.create!(username: "Pandemonium", password: "testtest")
+User.create!(username: "Pandemic", password: "testtest")
+User.create!(username: "CookingWithPan", password: "testtest")
+Question.create!(subject: "Becoming a Better Follower", body: "Honey Graham's how do I make myself a better follower?", user_id: 4)
+Question.create!(subject: "Pan is Awesome", body: "Does anyone else love it when Pan says 'back to code?'", user_id: 5)
+Question.create!(subject: "Starting anew", body: "Really bummed to be repeating and no longer be a honey graham. Anyone else feel this way?", user_id: 2)
+Question.create!(subject: "Remembering the Good ol' Days", body: "Pan was the best instructor!", user_id: 3)
+Question.create!(subject: "What a Great Guy", body: "Pan's the best, period", user_id: 4)
+Question.create!(subject: "Lots of Puns", body: "Guys, there are so many words you can make with Pan!", user_id: 4)
+Question.create!(subject: "Honey Grahams", body: "I am no longer a golden bear, I am a honey graham.", user_id: 3)
+Question.create!(subject: "Back to Code", body: "Just wasting my time before going back to code", user_id: 7)
+Answer.create!(body: "Yeah it's super awesome!", question_id: 1, user_id: 6)
+Answer.create!(body: "You will always be a honey graham, my child", question_id: 3, user_id: 3)
+Answer.create!(body: "Yeah! I wish he was still our instructor, crossing my fingers for phase 3", question_id: 2, user_id: 3)
+Answer.create!(body: "He's so smart!", question_id: 4, user_id: 5)
+Answer.create!(body: "words like, Panda, pandemonium, pandemic, pander, pants, pantalones.", question_id: 6, user_id: 7)
+Answer.create!(body: "Welcome, Brother Honey Graham", question_id: 7, user_id: 1)
+Answer.create!(body: "Hey! This is your leader, get back to code.", question_id: 7, user_id: 1)
+Answer.create!(body: "We will sherpa you along, fellow honey graham", question_id: 3, user_id: 4)
+Answer.create!(body: "Absolutely, we leave no grahams behind", question_id: 3, user_id: 7)
+10.times {Comment.create!(body: "Pan was here",commentable_type: "Question", commentable_id: rand(1..7), user_id: 1)}
+5.times {Comment.create!(body: "Pan was here",commentable_type: "Answer", commentable_id: rand(1..9), user_id: 1)}
+Tag.create!(name: "Pan")
+Tag.create!(name: "Honey Graham")
+Tag.create!(name: "Coding")
