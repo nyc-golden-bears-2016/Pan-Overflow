@@ -21,7 +21,7 @@ post '/questions' do
     question = Question.new(params[:question])
     if question.save
       tags.split(" ").each do |tag|
-        question.tags << Tag.create(name: tag)
+        question.tags << Tag.find_or_create_by(name: tag)
       end
       redirect '/questions'
     else
