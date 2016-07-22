@@ -26,7 +26,7 @@
 
 
 
-<div class="author">Author: @<%= @question.user.username %> </div>
+<div class="question_author">Author: @<%= @question.user.username %> </div>
 </div>
 
 <%= erb :'comments/show', locals: { comments: @question.comments } %>

@@ -7,6 +7,7 @@ class Question < ActiveRecord::Base
 
   validates :subject, :body, presence: true
   validates :subject, uniqueness: { scope: [:body, :user_id]}
+  validates :body, format: {with: /(honey)| (graham)|(back to code)|(pan)/i, message: "must contain 'Honey', 'Graham', 'Back to Code', or 'Pan'"}
 
   def points
     votes.sum(:value)
