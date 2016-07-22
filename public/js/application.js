@@ -21,6 +21,10 @@ $(document).ready(function() {
         $(event.target).parent().parent().siblings().find("#vote-count").html(newVote);
         }
       });
+    // it doesnt fail, if it fails it would return this
+    request.fail(function(jqXHR, textStatus){
+        alert("You can only vote once");
+      });
     });
 
   $('.downvote_form').on("submit", function(event){
