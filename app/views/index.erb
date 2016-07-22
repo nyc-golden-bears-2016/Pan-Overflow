@@ -1,3 +1,14 @@
+<% if @errors %>
+  <div class="pan_gif">
+    <img src="/pan_finger_wag.gif">
+  <p>Pan says:</p>
+  <ul class="error-list pad-b-2">
+    <% @errors.each do |error| %>
+      <li class="error-item"><%= error %></li>
+    <% end %>
+  </ul>
+  </div>
+<% end %>
 
 <% @questions.each do | question | %>
 <div class="main_box">

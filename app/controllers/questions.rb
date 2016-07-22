@@ -40,8 +40,14 @@ end
 
 post '/questions/tag' do
   @tag = Tag.find_by(name: params[:tag])
-  @questions = @tag.questions
-  erb :'tag/show'
+  if @tag.nil?
+    @errors = ["I can't seem to find that tag"]
+    @questions = Question.all
+    erb :'index'
+  else
+    @questions = @tag.questions
+    erb :'tag/show'
+  end
 end
 
 get '/questions/tag/:id' do
