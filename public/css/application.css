@@ -254,3 +254,10 @@ h2{
 #welcome_msg:hover{
   color: #008FFF;
 }
+.tag{
+  position: absolute;
+  margin-left: 70%;
+}
+.tag li{
+  display: inline;
+}
