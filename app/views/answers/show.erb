@@ -1,4 +1,4 @@
-<!-- display answer -->
+<% unless @question.answers.empty? %>
 <h2>Answers:</h2>
 
 <!-- display answer votes -->
@@ -15,6 +15,6 @@
 
   <%= erb :'comments/new' , locals: { model: answer, question_id: @question.id } %>
 <% end %>
-
+<% end %>
 
 

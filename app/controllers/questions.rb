@@ -41,10 +41,12 @@ end
 post '/questions/tag' do
   @tag = Tag.find_by(name: params[:tag])
   if @tag.nil?
+    @questions = Question.all
     @errors = ["No results found with #{params[:tag]} tag."]
-    erb :'tag/show'
+    erb :'index'
   else
     @questions = @tag.questions.sort{|top, bottom| bottom.points <=> top.points}
+
     erb :'tag/show'
   end
 end
