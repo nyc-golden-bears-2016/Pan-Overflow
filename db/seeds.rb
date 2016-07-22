@@ -24,6 +24,9 @@ Answer.create!(body: "We will sherpa you along, fellow honey graham", question_i
 Answer.create!(body: "Absolutely, we leave no grahams behind", question_id: 3, user_id: 7)
 10.times {Comment.create!(body: "Pan was here",commentable_type: "Question", commentable_id: rand(1..7), user_id: 1)}
 5.times {Comment.create!(body: "Pan was here",commentable_type: "Answer", commentable_id: rand(1..9), user_id: 1)}
-Tag.create!(name: "Pan")
-Tag.create!(name: "Honey Graham")
 Tag.create!(name: "Coding")
+Tag.create!(name: "Honey Graham")
+Tag.create!(name: "Pan")
+5.times {Question.all.sample.tags << Tag.all.sample}
+5.times {Question.all.sample.tags << Tag.all.sample}
+5.times {Question.all.sample.tags << Tag.all.sample}
