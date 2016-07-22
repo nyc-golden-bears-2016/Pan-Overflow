@@ -1,32 +1,41 @@
-<% @questions.each do | question | %>
-<div class="main_box">
-  <div class="table"> <a href="/questions/<%= question.id%>">
-    <table>
-      <tr>
-        <%=question.points%> Votes<br>
-      </tr>
-      <tr>
-        <%=question.answers.count%> Answers<br>
-      </tr>
-      <tr>
-        <%=question.comments.count%> Comments<br>
-      </tr>
-    </table>
-  </div>
-  <div class="subject">
-    Question: <%=question.subject%>
-  <br>
-  </div>
-  <div class="author">
-    Author: <%=question.user.username%>
-  </div>
-  <div class="tag">
-    Tags: <%question.tags.each do |tag|%>
-    <%=tag.name%>
-    <%end%>
-  </div>
-  </a>
-</div>
-  <br><br><br>
+<% if @questions.nil? %>
+
+  <% if @errors %>
+    <br>
+    <br><br><br><br><br><br><br>
+    <h3><%= @errors[0] %></h3>
   <% end %>
 
+<% else %>
+  <% @questions.each do | question | %>
+  <div class="main_box">
+    <div class="table"> <a href="/questions/<%= question.id%>">
+      <table>
+        <tr>
+          <%=question.points%> Votes<br>
+        </tr>
+        <tr>
+          <%=question.answers.count%> Answers<br>
+        </tr>
+        <tr>
+          <%=question.comments.count%> Comments<br>
+        </tr>
+      </table>
+    </div>
+    <div class="subject">
+      Question: <%=question.subject%>
+    <br>
+    </div>
+    <div class="author">
+      Author: <%=question.user.username%>
+    </div>
+    <div class="tag">
+      Tags: <%question.tags.each do |tag|%>
+      <%=tag.name%>
+      <%end%>
+    </div>
+    </a>
+  </div>
+    <br><br><br>
+    <% end %>
+<% end %>

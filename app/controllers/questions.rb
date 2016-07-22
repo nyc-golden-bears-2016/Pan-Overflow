@@ -37,11 +37,16 @@ get '/questions/:id' do
   erb :'questions/show'
 end
 
-
+#shows questions that were search by a tag
 post '/questions/tag' do
   @tag = Tag.find_by(name: params[:tag])
-  @questions = @tag.questions
-  erb :'tag/show'
+  if @tag.nil?
+    @errors = ["No results found with #{params[:tag]} tag."]
+    erb :'tag/show'
+  else
+    @questions = @tag.questions.sort{|top, bottom| bottom.points <=> top.points}
+    erb :'tag/show'
+  end
 end
 
 get '/questions/tag/:id' do

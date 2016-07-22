@@ -4,15 +4,38 @@ $(document).ready(function() {
   // when we try to bind to them
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  $('.upvote_form').on("submit", function(event){
+    event.preventDefault();
+    var request = $.ajax({
+      method: "POST",
+      url: "/votes",
+      data: $(event.target.children).each(function(index, el) {el.name; el.value})
+    });
+    request.done(function(response){
+        var currentVote = $(event.target).parent().parent().siblings().find("#vote-count").html();
+        var newVote = parseInt(currentVote) + 1;
+        $(event.target).parent().parent().siblings().find("#vote-count").html(newVote);
+      });
+    // it doesnt fail, if it fails it would return this
+    request.fail(function(jqXHR, textStatus){
+        alert("You can only vote once");
+      });
+    });
 
-  // $('.search_tag_box').on('click', 'submit', function(event){
-  //   event.preventDefault();
-  //   $.ajax({
-  //     method: "POST",
-  //     url: '/'
-  //   }).done(function(response) {
-  //     alert("working!!!");
-  //     debugger;
-  //   }),
-  // });
+  $('.downvote_form').on("submit", function(event){
+    event.preventDefault();
+    var request = $.ajax({
+      method: "POST",
+      url: "/votes",
+      data: $(event.target.children).each(function(index, el) {el.name; el.value})
+    });
+    request.done(function(response){
+        var currentVote = $(event.target).parent().parent().siblings().find("#vote-count").html();
+        var newVote = parseInt(currentVote) - 1;
+        $(event.target).parent().parent().siblings().find("#vote-count").html(newVote);
+    });
+    request.fail(function(jqXHR, textStatus){
+       alert("You can only vote once")
+      });
+    });
 });
